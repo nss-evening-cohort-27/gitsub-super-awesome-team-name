@@ -56,19 +56,18 @@ const renderToDom = (divId, htmlToRender) => {
   selectedDiv.innerHTML = htmlToRender;
 };
 
-// get the cards on the DOM
-const cardsOnDom = (array) => {
-  let domString = "";
-  for (const member of array) {
-    domString += `<div id="Packages" class="card" style="width: 18rem;">
-    <img src="${member.image}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <p class="card-title>${member.name} </p>  
-    <p class="card-text">${member.description}</p>
-      <button>href="#" class="btn btn-primary">Learn More</button>
-    </div>
-  </div>`;
-  }
-
-  renderToDom("#Packages", domString);
+ const renderPackages = (array) => {
+  let packagesHTML = '';
+  array.forEach((package) => {
+    packagesHTML += `<div id="Packages" class="card" style="width: 18rem;">
+        <img src="${package.image}" class="card-img-top" alt="...">
+        <div class="card-body">
+         <p class="card-title>${package.name} </p>  
+        <p class="card-text">${package.description}</p>
+          <button href="#" class="btn btn-primary">Learn More</button>
+      </div>
+      </div>`;
+    });
+  renderToDom('#Packages', packagesHTML);
 };
+renderPackages(packages);
