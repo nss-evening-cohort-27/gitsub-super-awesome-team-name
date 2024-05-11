@@ -36,3 +36,54 @@ let repos = [
     lang: 'HTML'
   },
 ];
+
+// render to DOM utility function
+const renderToDom = (divId, htmlToRender) => {
+  const selectedDiv = document.querySelector(divId);
+  selectedDiv.innerHTML = htmlToRender;
+};
+
+const renderRepos = (array) => {
+  let reposHTML = '';
+  array.forEach((repo) => {
+    reposHTML += `<div class="card">
+    <div class="card-header">${repo.title}</div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>${repo.desc}</p>
+        <p class='lang'>${repo.lang}</p>
+      </blockquote>
+    </div>
+  </div>
+    `
+  });
+  renderToDom('#cards', reposHTML);
+};
+
+// render form to DOM
+const renderForm = () => {
+  const formHTML = `
+  <form>
+    <h4>Create a new repository</h4><hr>
+    <div class="mb-3">
+      <label for="name" class="form-label">Repository Name<span style="color: rgb(240, 95, 95)"> *</span></label>
+      <input type="text" class="form-control name" id="repoform">
+      <div id="repoform" class="form-text">Great repository names are short and memorable. Need inspiration? How about <span style="color: green">super-super-engine</span>?</div>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description (optional)</label>
+      <textarea class="form-control" id="repoform" rows="1"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Create Repository</button>
+    </div>
+  </form>`;
+  renderToDom('#form', formHTML);
+}
+;
+// event listener 
+const reposButton = document.querySelector('#repos');
+
+reposButton.addEventListener('click', () => {
+  renderForm();
+  renderRepos(repos);
+});
