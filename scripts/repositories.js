@@ -59,7 +59,7 @@ const renderRepos = (array) => {
         break;
       default:
     }
-    reposHTML += `<div class="card">
+    reposHTML += `<div class="card" id="repoCard">
       <div class="card-header">${repo.title}</div>
       <div class="card-body">
         <blockquote class="blockquote mb-0">
@@ -81,7 +81,7 @@ const renderForm = () => {
     <div class="mb-3">
       <label for="name" class="form-label">Repository Name<span style="color: rgb(240, 95, 95)"> *</span></label>
       <input type="text" class="form-control name" id="repoform">
-      <div id="repoform" class="form-text">Great repository names are short and memorable. Need inspiration? How about <span style="color: green">super-super-engine</span>?</div>
+      <div id="repoform" class="form-text">Great repository names are short and memorable. Need inspiration? How about <span style="color: green">super-duper-engine</span>?</div>
     </div>
     <div class="mb-3">
       <label for="description" class="form-label">Description (optional)</label>
@@ -91,8 +91,8 @@ const renderForm = () => {
     </div>
   </form>`;
   renderToDom('#form', formHTML);
-}
-;
+};
+
 // event listener 
 const reposButton = document.querySelector('#repos');
 
