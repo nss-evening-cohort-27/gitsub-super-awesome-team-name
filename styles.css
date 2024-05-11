@@ -13,7 +13,6 @@ body {
   margin-top: 20px;
   border-bottom: solid 1px rgb(128, 128, 128, 0.418);
   position: sticky;
-  top: 0;
 }
 
 .btntxt {
@@ -117,7 +116,7 @@ body {
   color: white;
   border-bottom: 1px solid white;
   margin-left: 50px;
-  margin-right: 50px;
+  margin-right: 100px;
   padding-top: 10px;
 }
 

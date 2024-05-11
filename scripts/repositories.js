@@ -32,7 +32,7 @@ let repos = [
   {
     id: 6,
     title: 'E27-HTML-Resume',
-    desc: 'Builing HTML version of your resume',
+    desc: 'Building HTML version of your resume',
     lang: 'HTML'
   },
 ];
@@ -46,16 +46,29 @@ const renderToDom = (divId, htmlToRender) => {
 const renderRepos = (array) => {
   let reposHTML = '';
   array.forEach((repo) => {
+    let langIcon;
+    switch (repo.lang) {
+      case 'JavaScript':
+        langIcon = '🟡';
+        break;
+      case 'HTML':
+        langIcon = '🟠'; 
+        break;
+      case 'CSS':
+        langIcon = '🔵';
+        break;
+      default:
+    }
     reposHTML += `<div class="card">
-    <div class="card-header">${repo.title}</div>
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p>${repo.desc}</p>
-        <p class='lang'>${repo.lang}</p>
-      </blockquote>
+      <div class="card-header">${repo.title}</div>
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <p>${repo.desc}</p>
+          <p class='lang'>${langIcon} ${repo.lang}</p>
+        </blockquote>
+      </div>
     </div>
-  </div>
-    `
+    `;
   });
   renderToDom('#cards', reposHTML);
 };
