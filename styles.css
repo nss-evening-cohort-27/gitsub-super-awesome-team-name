@@ -82,3 +82,6 @@ body {
 .foot:hover {
   text-decoration: underline;
 }
+#sidepProfile{
+  border: 10px black solid;
+}
