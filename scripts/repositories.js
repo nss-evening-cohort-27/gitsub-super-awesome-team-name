@@ -46,7 +46,7 @@ const renderToDom = (divId, htmlToRender) => {
 // render search input field
 const renderSearch = () => {
   const searchHTML = `
-    <input type="text" id="searchInput" class="form-control" placeholder="Find a repository">
+    <input type="text" id="searchInput" class="form-control" placeholder="Find a repository...">
   `;
   renderToDom('#search', searchHTML);
   document.querySelector('#searchInput').addEventListener('input', handleSearch); // event listener for search input
