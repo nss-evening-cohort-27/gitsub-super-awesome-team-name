@@ -8,7 +8,7 @@ let repos = [
   {
     id: 2,
     title: 'Pet-Adoption',
-    desc: 'An application to help you get introducted to Bootstrap cards and using JS to render those cards from an array of objects.',
+    desc: 'An application to help you get introduced to Bootstrap cards and using JS to render those cards from an array of objects.',
     lang: 'JavaScript'
   },
   {
