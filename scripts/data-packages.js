@@ -71,3 +71,25 @@ const renderToDom = (divId, htmlToRender) => {
   renderToDom('#Packages', packagesHTML);
 };
 renderPackages(packages);
+
+// form for user to add on the DOM
+const form = document.querySelector('form');
+
+// function that grabs all the values from the form, pushes the new object to the array, then repaints the DOM with the new teammate
+const createTitle = (e) => {
+  e.preventDefault(); 
+
+  const newTitleObj = {
+    id: packages.length + 1,
+    title: document.querySelector("#title").value,
+    description: document.querySelector("#description").value,
+    image: document.querySelector("#image").value
+  }
+
+  team.push(newTitleObj);
+  cardsOnDom(title);
+  form.reset();
+}
+
+// event listener for the form submit and pass it the function
+form.addEventListener('submit', createTitle);
