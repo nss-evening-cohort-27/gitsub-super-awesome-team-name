@@ -128,3 +128,33 @@ body {
 .card-header:hover {
   text-decoration: underline;
 }
+
+
+/* REYNOLD.CSS */ 
+
+header {
+  background-color: rgb(19, 21, 31);
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+
+main {
+  padding: 20px;
+}
+
+
+#pinnedTasks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; 
+  height: 300px; 
+  overflow-y: auto; 
+}
