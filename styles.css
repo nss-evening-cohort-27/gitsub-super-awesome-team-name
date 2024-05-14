@@ -1,5 +1,9 @@
 body {
-  background-color: rgb(19, 21, 31)
+  background-color: rgb(19, 21, 31);
+}
+
+#center {
+  padding-bottom: 100px; 
 }
 
 #navbar {
@@ -9,7 +13,6 @@ body {
   margin-top: 20px;
   border-bottom: solid 1px rgb(128, 128, 128, 0.418);
   position: sticky;
-  top: 0;
 }
 
 .btntxt {
@@ -84,4 +87,45 @@ body {
 }
 #sidepProfile{
   border: 10px black solid;
+}
+#form {
+  color: white;
+  padding-top: 50px;
+  margin: 50px;
+}
+
+#repoform {
+  color: white;
+  background: transparent;
+  border-radius: 2;
+}
+
+.form-control {
+  width: 500px;
+  margin-bottom: 20px; /* Add margin bottom for spacing between elements */
+}
+
+.form-control.name {
+  width: 300px;
+}
+
+.lang {
+  font-size: 10px;
+}
+
+.card {
+  background: transparent;
+  color: white;
+  border-bottom: 1px solid white;
+  margin-left: 50px;
+  margin-right: 100px;
+  padding-top: 10px;
+}
+
+.card-header {
+  color: rgb(109, 173, 247);
+}
+
+.card-header:hover {
+  text-decoration: underline;
 }
