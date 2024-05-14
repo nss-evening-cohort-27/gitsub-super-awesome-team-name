@@ -91,5 +91,25 @@ const createTitle = (e) => {
   form.reset();
 }
 
-// event listener for the form submit and pass it the function
-form.addEventListener('submit', createTitle);
+// delete
+const app = document.querySelector("#Packages");
+
+app.addEventListener('click', (e) => {
+  
+  if (e.target.id.includes("delete")) {
+       const [, id] = e.target.id.split("--");
+
+    const index = packages.findIndex(e => e.id === Number(id));
+
+    packages.splice(index, 1);
+
+    cardsOnDom(packages);
+  }
+});
+
+const startApp = () => {
+  cardsOnDom(team);
+}
+
+
+startApp();
