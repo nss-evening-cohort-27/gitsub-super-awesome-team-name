@@ -56,19 +56,60 @@ const renderToDom = (divId, htmlToRender) => {
   selectedDiv.innerHTML = htmlToRender;
 };
 
-// get the cards on the DOM
-const cardsOnDom = (array) => {
-  let domString = "";
-  for (const member of array) {
-    domString += `<div id="Packages" class="card" style="width: 18rem;">
-    <img src="${member.image}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <p class="card-title>${member.name} </p>  
-    <p class="card-text">${member.description}</p>
-      <button>href="#" class="btn btn-primary">Learn More</button>
-    </div>
-  </div>`;
+ const renderPackages = (array) => {
+  let packagesHTML = '';
+  array.forEach((package) => {
+    packagesHTML += `<div id="Packages" class="card" style="width: 18rem;">
+        <img src="${package.image}" class="card-img-top" alt="...">
+        <div class="card-body">
+         <p class="card-title>${package.name} </p>  
+        <p class="card-text">${package.description}</p>
+          <button href="#" class="btn btn-primary">Learn More</button>
+      </div>
+      </div>`;
+    });
+  renderToDom('#Packages', packagesHTML);
+};
+renderPackages(packages);
+
+// form for user to add on the DOM
+const form = document.querySelector('form');
+
+// function that grabs all the values from the form, pushes the new object to the array, then repaints the DOM with the new teammate
+const createTitle = (e) => {
+  e.preventDefault(); 
+
+  const newTitleObj = {
+    id: packages.length + 1,
+    title: document.querySelector("#title").value,
+    description: document.querySelector("#description").value,
+    image: document.querySelector("#image").value
   }
 
-  renderToDom("#Packages", domString);
-};
+  title.push(newTitleObj);
+  cardsOnDom(title);
+  form.reset();
+}
+
+// delete
+const app = document.querySelector("#Packages");
+
+app.addEventListener('click', (e) => {
+  
+  if (e.target.id.includes("delete")) {
+       const [, id] = e.target.id.split("--");
+
+    const index = packages.findIndex(e => e.id === Number(id));
+
+    packages.splice(index, 1);
+
+    cardsOnDom(packages);
+  }
+});
+
+const startApp = () => {
+  cardsOnDom(team);
+}
+
+
+startApp();
