@@ -98,7 +98,9 @@ body {
 .foot:hover {
   text-decoration: underline;
 }
-
+#sidepProfile{
+  border: 10px black solid;
+}
 #form {
   color: white;
   padding-top: 50px;
