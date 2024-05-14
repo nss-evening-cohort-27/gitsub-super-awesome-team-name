@@ -86,7 +86,7 @@ const createTitle = (e) => {
     image: document.querySelector("#image").value
   }
 
-  team.push(newTitleObj);
+  title.push(newTitleObj);
   cardsOnDom(title);
   form.reset();
 }
