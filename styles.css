@@ -1,5 +1,9 @@
 body {
-  background-color: rgb(19, 21, 31)
+  background-color: rgb(19, 21, 31);
+}
+
+#center {
+  padding-bottom: 100px; 
 }
 
 #navbar {
@@ -9,7 +13,6 @@ body {
   margin-top: 20px;
   border-bottom: solid 1px rgb(128, 128, 128, 0.418);
   position: sticky;
-  top: 0;
 }
 
 .btntxt {
@@ -22,9 +25,10 @@ body {
   margin-bottom: 8px;
   border: none;
   background: transparent;
-  color: rgb(110, 110, 110);
-  font-size: small;
+  color: rgb(218, 218, 218);
+  font-size: 14px;
   padding-bottom: 5px;
+  position: relative; 
 }
 
 .navbtn:hover {
@@ -33,6 +37,18 @@ body {
   transition: all 0.3 ease;
   color: white;
 }
+
+.navbtn:active::after,
+.navbtn:focus::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: orange;
+}
+
 
 .icon {
   padding-right: 4px;
@@ -81,4 +97,80 @@ body {
 
 .foot:hover {
   text-decoration: underline;
+}
+#sidepProfile{
+  border: 10px black solid;
+}
+#form {
+  color: white;
+  padding-top: 50px;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+
+#repoform {
+  color: white;
+  background: transparent;
+  border-radius: 2;
+}
+
+.form-control {
+  width: 500px;
+  margin-bottom: 20px;
+}
+
+.form-control.name {
+  width: 300px;
+  margin-bottom: 0;
+}
+
+.lang {
+  font-size: 10px;
+}
+
+.desc {
+  font-size: 15px;
+}
+
+.card {
+  background: transparent;
+  color: white;
+  border-bottom: 1px solid rgb(68, 65, 65);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-left: 50px;
+  margin-right: 100px;
+  padding-top: 10px;
+}
+
+.card-header {
+  color: rgb(109, 173, 247);
+  font-size: 20px;
+  border: none;
+  margin: 0;
+}
+
+.card-header:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#searchInput {
+  display: flex;
+  justify-content: flex-start;
+  color: white;
+  margin-left: 52px;
+  margin-bottom: 0;
+  margin-top: 30px;
+  background: transparent;
+  border-radius: 0;
+  border-color: rgba(145, 141, 141, 0.363);
+}
+
+
+.form-control::placeholder {
+  color: #bbb8b8ab;
+
 }
