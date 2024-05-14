@@ -122,7 +122,7 @@ reposButton.addEventListener('click', () => {
   renderSearch();
 });
 
-
+// assign random language
 const randomLang = () => {
   const langs = ['JavaScript', 'HTML', 'CSS'];
   const randomIndex = Math.floor(Math.random () * langs.length);
