@@ -1,9 +1,15 @@
 body {
   background-color: rgb(19, 21, 31);
+  margin: 0;
+  display: flex;
 }
 
 #center {
-  padding-bottom: 100px; 
+  flex-grow: 1; 
+  padding-bottom: 100px;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-start; 
 }
 
 #navbar {
@@ -13,6 +19,7 @@ body {
   margin-top: 20px;
   border-bottom: solid 1px rgb(128, 128, 128, 0.418);
   position: sticky;
+  width: 100%;
 }
 
 .btntxt {
@@ -98,16 +105,17 @@ body {
 .foot:hover {
   text-decoration: underline;
 }
-#sidepProfile{
-  border: 10px black solid;
+#sideProfile{
+  border: none;
+  margin-right: 20px;
 }
 #form {
   color: white;
   padding-top: 50px;
   margin-top: 10px;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-right: 60px;
   margin-bottom: 50px;
+  margin-left: 50px;
 }
 
 #repoform {
@@ -158,10 +166,8 @@ body {
 }
 
 #searchInput {
-  display: flex;
-  justify-content: flex-start;
   color: white;
-  margin-left: 52px;
+  margin-left: 50px;
   margin-bottom: 0;
   margin-top: 30px;
   background: transparent;
@@ -173,4 +179,44 @@ body {
 .form-control::placeholder {
   color: #bbb8b8ab;
 
+}
+
+
+.card-img-top {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 200px;
+  border-radius: 200px;
+  color: white;
+}
+
+.profile-button-container {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 5px;
+}
+
+.profbutton {
+  font-size: 12px;
+  color: white;
+}
+
+.follow-container {
+  display: flex;
+  gap: 10px;
+  font-size: small;
+  padding-bottom: 20px;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  font-size: small;
+  padding-bottom: 20px;
+  border-bottom: 1px solid grey;
+}
+
+.highlight-container {
+  display: flex;
+  flex-direction: column;
 }
